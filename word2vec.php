@@ -15,13 +15,13 @@ function train($txtfilepath) {
 }
 function distance($keyword) {
 	exec ( "cd " . dirname ( __FILE__ ) . " && ./distancecli " . dirname ( __FILE__ ) . "/vectors.bin " . $keyword, $outputArray );
-	if (isset ( $outputArray )) {
+	if (isset ( $outputArray[0] )) {
 		return $outputArray;
 	} else {
 		return distance ( $keyword );
 	}
 }
 
-train ( dirname ( __FILE__ ) . "/google-word2vec-trunk/questions-words.txt" );
+//train ( dirname ( __FILE__ ) . "/google-word2vec-trunk/questions-words.txt" );
 echo json_encode ( distance ( "facebook" ), true );
 ?>
