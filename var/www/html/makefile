@@ -6,6 +6,8 @@ all: distancecli
 
 distancecli : distancecli.c
 	$(CC) distancecli.c -o distancecli $(CFLAGS)
+word-analogy : word-analogy.c
+	$(CC) word-analogy.c -o word-analogy $(CFLAGS)
 
 clean:
-	rm -rf distancecli
+	rm -rf distance word-analogy
